@@ -62,7 +62,7 @@ public class CheckPoint1 {
 
             int gridSize = 30;
             float spacing = 1.0f;
-            int maxHeight = 10;
+            int maxHeight = 9;
 
             for (int x = 0; x < gridSize; x++) {
                 for (int z = 0; z < gridSize; z++) {
@@ -77,9 +77,9 @@ public class CheckPoint1 {
                             Cube.drawBedrock();
                         } else if (y == height) {
                             double topType = noise.getNoise(x * 2, z * 2);
-                            if (topType < -0.33) {
+                            if (topType < -0.3) {
                                 Cube.drawWater();
-                            } else if (topType < 0.33) {
+                            } else if (topType < 0) {
                                 Cube.drawSand();
                             } else {
                                 Cube.drawGrass();
