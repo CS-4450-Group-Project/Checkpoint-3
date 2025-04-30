@@ -1,33 +1,21 @@
 package checkpoint1;
 
+
+import java.io.InputStream;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 
-import java.io.InputStream;
-
 public class TextureUtil {
+    public static Texture terrain;
 
-    /**
-     * Loads a texture from /checkpoint1/textures/
-     * Place texture PNGs inside: src/checkpoint1/textures/
-     */
-    public static Texture loadTexture(String fileName) {
+    public static void loadTerrain() {
         try {
-            String path = "/checkpoint1/textures/" + fileName;
-            InputStream in = TextureUtil.class.getResourceAsStream(path);
-
-            if (in == null) {
-                System.err.println("❓ Could not find texture: " + path);
-                return null;
-            }
-
-            Texture texture = TextureLoader.getTexture("PNG", in);
-            System.out.println("✅ Loaded texture: " + fileName);
-            return texture;
+            InputStream in = TextureUtil.class.getResourceAsStream("/checkpoint1/textures/terrain.png");
+            terrain = TextureLoader.getTexture("PNG", in);
+            System.out.println("Loaded terrain.png");
         } catch (Exception e) {
-            System.err.println("❌ Failed to load texture: " + fileName);
+            System.err.println("Failed to load terrain.png");
             e.printStackTrace();
-            return null;
         }
     }
 }
