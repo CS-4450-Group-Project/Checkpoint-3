@@ -1,4 +1,4 @@
-package checkpoint1;
+
 
 import static org.lwjgl.opengl.GL11.*;
 import org.newdawn.slick.opengl.Texture;

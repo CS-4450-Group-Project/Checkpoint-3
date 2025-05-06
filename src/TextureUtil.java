@@ -1,4 +1,4 @@
-package checkpoint1;
+
 
 
 import java.io.InputStream;
@@ -10,7 +10,7 @@ public class TextureUtil {
 
     public static void loadTerrain() {
         try {
-            InputStream in = TextureUtil.class.getResourceAsStream("/checkpoint1/textures/terrain.png");
+            InputStream in = TextureUtil.class.getResourceAsStream("/terrain.png");
             terrain = TextureLoader.getTexture("PNG", in);
             System.out.println("Loaded terrain.png");
         } catch (Exception e) {
